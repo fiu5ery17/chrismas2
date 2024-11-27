@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flex Message Example</title>
 
-    <!-- 引入字體 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
@@ -116,9 +115,29 @@
                 transform: translateX(-10px);
             }
         }
+
+        /* 播放音樂按鈕 */
+        .play-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #e61d2e;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin: 10px auto;
+        }
     </style>
 </head>
 <body>
+
+<!-- 聖誕歌音樂 -->
+<audio id="christmas-music" preload="auto" loop muted>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg">
+    您的瀏覽器不支持 audio 元素。
+</audio>
 
 <div class="og-preview">
     <a href="https://your-link.com" target="_blank">
@@ -176,7 +195,7 @@
     </div>
 </div>
 
-<!-- 雪花飄逸，調整左右分佈 -->
+<!-- 雪花飄逸 -->
 <div class="snowflake" style="left: 5%; animation-duration: 10s; animation-delay: 0s;">❄</div>
 <div class="snowflake" style="left: 15%; animation-duration: 12s; animation-delay: 1s;">❄</div>
 <div class="snowflake" style="left: 25%; animation-duration: 9s; animation-delay: 2s;">❄</div>
@@ -186,6 +205,12 @@
 <div class="snowflake" style="left: 65%; animation-duration: 13s; animation-delay: 1.5s;">❄</div>
 <div class="snowflake" style="left: 75%; animation-duration: 12s; animation-delay: 2.5s;">❄</div>
 <div class="snowflake" style="left: 85%; animation-duration: 14s; animation-delay: 3.5s;">❄</div>
+
+<script>
+    // 音樂自動播放並解除靜音
+    document.getElementById('christmas-music').play();
+    document.getElementById('christmas-music').muted = false;
+</script>
 
 </body>
 </html>
