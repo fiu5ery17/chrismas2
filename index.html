@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Message Example</title>
+
+    <!-- 引入字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+
+        .og-preview img {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            border-radius: 0;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px;
+        }
+
+        .carousel .bubble {
+            flex: 0 0 auto;
+            width: 300px;
+            margin-right: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.95);
+            position: relative;
+        }
+
+        .bubble .hero img {
+            width: 100%;
+            height: auto;
+            border: none;
+        }
+
+        .bubble .body {
+            padding: 8px 10px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .bubble .footer {
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px 0;
+            text-align: center;
+        }
+
+        .button.primary {
+            background-color: #e61d2e;
+        }
+
+        .button.link {
+            background-color: green;
+        }
+
+        .button.phone {
+            background-color: green;
+        }
+
+        /* 雪花飄逸效果 */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            animation: fall 10s linear infinite, drift 5s ease-in-out infinite;
+            color: #fff;
+            font-size: 12px;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes fall {
+            0% {
+                top: -10px;
+                opacity: 1;
+            }
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes drift {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="og-preview">
+    <a href="https://your-link.com" target="_blank">
+        <img src="https://imgur.com/hC2xuAK.png" alt="Preview Image">
+    </a>
+</div>
+
+<div class="carousel">
+    <!-- Bubble 1 -->
+    <div class="bubble">
+        <div class="hero">
+            <img src="https://imgur.com/todJPEM.png" alt="Bubble 1 Image">
+        </div>
+        <div class="body">
+            <h2>信義房屋-曾偉豪</h2>
+            <p><strong>信義房屋股份有限公司-竹北福興店</strong></p>
+            <p>地址: 新竹縣竹北市福興東路二段83號</p>
+        </div>
+        <div class="footer">
+            <a href="tel://+886938516507" class="button primary">行動電話0938516507</a>
+            <a href="https://line.me/ti/p/PWvQu6xBBZ" class="button link">加入LINE洽詢</a>
+        </div>
+    </div>
+    <!-- Bubble 2 -->
+    <div class="bubble">
+        <div class="hero">
+            <img src="https://imgur.com/Q4SxS3Q.png" alt="Bubble 2 Image">
+        </div>
+        <div class="body">
+            <h2 style="color: #e61d2e;">【服務項目】</h2>
+            <ul>
+                <li><strong>1.市場行情提供</strong></li>
+                <li><strong>2.稅費估算</strong></li>
+                <li><strong>3.貸款資訊</strong></li>
+                <li><strong>4.協助居家修繕</strong></li>
+            </ul>
+        </div>
+        <div class="footer">
+            <a href="https://www.sinyi.com.tw/" class="button primary">信義房屋官網</a>
+            <a href="tel://+886-3-500-5000" class="button phone">分店電話03-500-5000</a>
+        </div>
+    </div>
+    <!-- Bubble 3 -->
+    <div class="bubble">
+        <div class="hero">
+            <img src="https://imgur.com/jZTzDNe.png" alt="Bubble 3 Image">
+        </div>
+        <div class="body">
+            <h2>SinyiCare 你的房屋信義在乎</h2>
+            <p>全國直營分店 服務保障一致</p>
+        </div>
+        <div class="footer">
+            <a href="https://www.sinyi.com.tw/sinyicare/?sinfrom=sinyi_header_buy" class="button primary">點我了解詳情</a>
+        </div>
+    </div>
+</div>
+
+<!-- 雪花飄逸，調整左右分佈 -->
+<div class="snowflake" style="left: 5%; animation-duration: 10s; animation-delay: 0s;">❄</div>
+<div class="snowflake" style="left: 15%; animation-duration: 12s; animation-delay: 1s;">❄</div>
+<div class="snowflake" style="left: 25%; animation-duration: 9s; animation-delay: 2s;">❄</div>
+<div class="snowflake" style="left: 35%; animation-duration: 8s; animation-delay: 3s;">❄</div>
+<div class="snowflake" style="left: 45%; animation-duration: 11s; animation-delay: 4s;">❄</div>
+<div class="snowflake" style="left: 55%; animation-duration: 10s; animation-delay: 0.5s;">❄</div>
+<div class="snowflake" style="left: 65%; animation-duration: 13s; animation-delay: 1.5s;">❄</div>
+<div class="snowflake" style="left: 75%; animation-duration: 12s; animation-delay: 2.5s;">❄</div>
+<div class="snowflake" style="left: 85%; animation-duration: 14s; animation-delay: 3.5s;">❄</div>
+
+</body>
+</html>
